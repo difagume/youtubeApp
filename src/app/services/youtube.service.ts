@@ -21,6 +21,10 @@ export class YoutubeService {
     params = params.append('playlistId',this.playlist);
     params = params.append('key',this.apikey);
 
+    if (this.nextPageToken) {
+        params = params.append('pageToken',this.nextPageToken);
+    }
+
     console.log('params',params);
 
     return this.http.get(url,{params: params})

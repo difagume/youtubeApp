@@ -28,4 +28,14 @@ export class HomeComponent implements OnInit {
     $('#videoModal').modal();
   }
 
+  cerrarModal(){
+    this.videoSel=null;
+    $('#videoModal').modal('hide');
+  }
+
+  cargarMas(){
+    // Combino los videos que ya tenía (this.videos) con los videos que me retorna la función dentro de (videos)
+    this._ys.getVideos().subscribe(videos=>this.videos.push.apply(this.videos, videos));
+  }
+
 }
