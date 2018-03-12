@@ -20,7 +20,7 @@ export class YoutubeService {
     params = params.append('maxResults','10');
     params = params.append('playlistId',this.playlist);
     params = params.append('key',this.apikey);
-    params = params.append('autoplay', 1);
+    params = params.append('autoplay', '1');
 
     if (this.nextPageToken) {
         params = params.append('pageToken',this.nextPageToken);
